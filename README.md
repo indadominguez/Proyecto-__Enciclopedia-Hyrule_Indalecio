@@ -1,5 +1,9 @@
 ## Descripción del proyecto 
 
+La aplicación es una **enciclopedia web interactiva del universo de The Legend of Zelda**, diseñada para que los usuarios puedan explorar información de toda la saga, buscar contenido en tiempo real, guardar elementos como favoritos y exportar datos del catálogo de juegos.
+
+Su objetivo principal es ofrecer una experiencia centralizada donde los fans puedan consultar personajes, criaturas y elementos del universo Zelda de forma rápida, organizada y persistente.
+
 ---
 
 ## Tecnologías y herramientas 
@@ -126,6 +130,54 @@ Esto hace que Firestore sea una base de datos muy segura si está bien configura
 - Se pueden definir permisos diferentes según el tipo de dato (por ejemplo, favoritos, perfiles, publicaciones, etc.)
 
 Esto garantiza que cada usuario solo tenga acceso a su propia información.
+
+---
+
+### Alternativas de Almacenamiento
+
+**1. Cookies**
+
+Las cookies son pequeños archivos de datos que el navegador guarda y que pueden ser enviados al servidor en cada petición.
+
+¿Cuándo se usan?
+
+Se utilizan principalmente para guardar información muy básica como sesiones de usuario, preferencias simples o identificadores temporales.
+
+Ventajas:
+
+- Se envían automáticamente al servidor
+- Útiles para mantener sesiones iniciadas
+- Funcionan de forma sencilla en casi todos los navegadores
+- Permiten cierto control desde **el backend**
+
+Desventajas:
+
+- Muy poca capacidad de almacenamiento
+- Menos seguras si no se configuran correctamente
+- No adecuadas para guardar datos complejos
+- Se envían en cada petición, lo que puede afectar el rendimiento
+
+
+**2. IndexedDB**
+
+IndexedDB es una base de datos integrada en el navegador que permite almacenar grandes cantidades de información de forma estructurada.
+
+¿Cuándo se usa?
+
+Se utiliza en aplicaciones web avanzadas que necesitan trabajar offline o manejar muchos datos en el cliente.
+
+Ventajas:
+
+- Mucho más capacidad que localStorage
+- Permite almacenar objetos complejos
+- Funciona sin conexión a internet
+- Ideal para aplicaciones web **tipo PWA**
+
+Desventajas:
+
+- Más compleja de programar
+- No sincroniza datos entre dispositivos
+- Depende del navegador del usuario
 
 ---
 
