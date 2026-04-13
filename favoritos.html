@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favoritos Zelda</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+<header class="cabecera-sitio">
+    <img class="logo-sitio" src="./asserts/img/zelda-fondo.png" alt="Logo Zelda Encyclopedia">
+
+    <section class="texto-cabecera">
+        <h1 class="titulo-sitio">Zelda Encyclopedia</h1>
+        <p class="subtitulo-sitio">Explora el universo Zelda</p>
+    </section>
+</header>
+
+<nav class="navegacion-sitio">
+    <ul class="menu-navegacion">
+        <li>
+            <a class="enlace-navegacion activo" href="./index.html">Buscador</a>
+        </li>
+        <li>
+            <a class="enlace-navegacion" href="./favoritos.html">Favoritos</a>
+        </li>
+        <li>
+            <a class="enlace-navegacion" href="./juegos.html">Juegos</a>
+        </li>
+    </ul>
+</nav>
+
+<main class="contenedor-principal">
+
+    <section class="panel panel-favoritos">
+
+        <header class="cabecera-panel">
+            <h2 class="titulo-panel">Mis favoritos</h2>
+
+            <menu class="acciones-favoritos">
+                <li>
+                    <button id="orden-az" class="boton">Ordenar A-Z</button>
+                </li>
+                <li>
+                    <button id="orden-za" class="boton">Ordenar Z-A</button>
+                </li>
+                <li>
+                    <button id="orden-reciente" class="boton">Más recientes</button>
+                </li>
+                <li>
+                    <button id="vaciar-favoritos" class="boton boton-peligro">Vaciar</button>
+                </li>
+            </menu>
+        </header>
+
+        <section
+            id="listaFavoritos"
+            class="lista-favoritos"
+            aria-label="Lista de favoritos"
+        >
+            <p class="mensaje-vacio">
+                No tienes favoritos todavía
+            </p>
+        </section>
+
+    </section>
+
+</main>
+
+<footer class="pie-sitio">
+    <p>Proyecto DAW - Zelda Encyclopedia</p>
+</footer>
+
+<script type="module" src="./js/ui.js"></script>
+
+</body>
+</html>

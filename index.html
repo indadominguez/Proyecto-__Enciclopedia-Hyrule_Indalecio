@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zelda Encyclopedia</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+<header class="cabecera-sitio">
+    <img class="logo-sitio" src="./asserts/img/zelda-fondo.png" alt="Logo Zelda Encyclopedia">
+
+    <section class="texto-cabecera">
+        <h1 class="titulo-sitio">Zelda Encyclopedia</h1>
+        <p class="subtitulo-sitio">Explora el universo Zelda</p>
+    </section>
+</header>
+
+<nav class="navegacion-sitio">
+    <ul class="menu-navegacion">
+        <li>
+            <a class="enlace-navegacion activo" href="./index.html">Buscador</a>
+        </li>
+        <li>
+            <a class="enlace-navegacion" href="./favoritos.html">Favoritos</a>
+        </li>
+        <li>
+            <a class="enlace-navegacion" href="./juegos.html">Juegos</a>
+        </li>
+    </ul>
+</nav>
+
+<main class="contenedor-principal">
+
+    <!-- BUSCADOR -->
+    <section class="panel panel-buscador">
+
+        <h2 class="titulo-panel">Buscador de la saga</h2>
+
+        <form class="formulario-busqueda" action="#" method="post">
+
+            <fieldset class="campo-formulario">
+
+                <legend>Explorar Zelda API</legend>
+
+                <label class="etiqueta-formulario" for="searchInput">
+                    Buscar
+                </label>
+
+                <input
+                    class="entrada-formulario"
+                    id="searchInput"
+                    type="text"
+                    placeholder="Personajes o monstruos"
+                    autocomplete="off"
+                >
+
+                <label class="etiqueta-formulario" for="typeSelect">
+                    Tipo
+                </label>
+
+                <select class="selector-formulario" id="typeSelect">
+                    <option value="characters">Personajes</option>
+                    <option value="monsters">Monstruos</option>
+                </select>
+
+            </fieldset>
+
+        </form>
+
+        <output class="estado" id="status" aria-live="polite"></output>
+
+        <section id="results" class="resultados" aria-label="Resultados de búsqueda"></section>
+
+    </section>
+
+    <!-- XML -->
+    <section class="panel panel-catalogo">
+
+        <h2 class="titulo-panel">Catálogo de juegos</h2>
+
+        <ul class="acciones">
+            <li>
+                <button id="loadXml" class="boton">Cargar XML</button>
+            </li>
+            <li>
+                <button id="exportCsv" class="boton">Exportar CSV</button>
+            </li>
+        </ul>
+
+        <section id="games" class="lista-juegos"></section>
+
+    </section>
+
+</main>
+
+<footer class="pie-sitio">
+    <p>Proyecto DAW - Zelda Encyclopedia</p>
+</footer>
+
+<script type="module" src="./js/ui.js"></script>
+
+</body>
+</html>
