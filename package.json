@@ -1,0 +1,22 @@
+{
+  "name": "proyecto-__enciclopedia-hyrule_indalecio",
+  "version": "1.0.0",
+  "description": "La aplicación es una **enciclopedia web interactiva del universo de The Legend of Zelda**, diseñada para que los usuarios puedan explorar información de toda la saga, buscar contenido en tiempo real, guardar elementos como favoritos y exportar datos del catálogo de juegos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indadominguez/Proyecto-__Enciclopedia-Hyrule_Indalecio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/indadominguez/Proyecto-__Enciclopedia-Hyrule_Indalecio/issues"
+  },
+  "homepage": "https://github.com/indadominguez/Proyecto-__Enciclopedia-Hyrule_Indalecio#readme",
+  "dependencies": {
+    "xml2js": "^0.6.2"
+  }
+}

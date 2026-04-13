@@ -8,6 +8,8 @@ Su objetivo principal es ofrecer una experiencia centralizada donde los fans pue
 
 ## Tecnologías y herramientas 
 
+He utilizado una versión de 
+
 ---
 
 ## La Zelda API 
