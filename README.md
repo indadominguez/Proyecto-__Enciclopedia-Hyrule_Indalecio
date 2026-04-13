@@ -8,7 +8,63 @@ Su objetivo principal es ofrecer una experiencia centralizada donde los fans pue
 
 ## Tecnologías y herramientas 
 
-He utilizado una versión de 
+Para su desarrollo se utilizan tecnologías ya vistas como HTML, CSS y JavaScript, junto con herramientas como **localStorage** para el almacenamiento local, **Firebase Firestore** para la persistencia de datos y diferentes formatos de intercambio de información como JSON, XML y **CSV**.
+
+### HTML, CSS  y JavaScript
+
+**Son el núcleo de la aplicación**:
+
+- HTML → estructura
+
+- CSS → diseño
+
+- JavaScript → lógica:
+
+    - Llamadas a la API
+    - Manejo de eventos
+    - Manipulación del DOM
+    - LocalStorage
+    - Firebase
+
+---
+
+### API externa
+
+Utilizo la API de **Zelda** para poder interpretar la información de los distintos tipos de entidades, en el proyecto he elegido estos dos:
+
+- Personajes
+
+- Monstruos
+
+---
+
+### Firebase y LocalStorage
+
+**1. Firebase**
+
+Se encarga de:
+
+- Guardar favoritos
+- Persistencia entre dispositivos
+- Almacenamiento en la nube
+
+**2.LocalStorage**
+
+Se encarga de:
+
+- Guarda búsquedas
+- Evita llamadas repetidas a la API
+- Mejora rendimiento
+
+---
+
+### NPM (Node Package Manager)
+
+Es un gestor de paquetes de JavaScript. 
+
+Permite instalar, actualizar y gestionar las librerias de mi proyecto.
+
+Gracias a **npm**, utilizo el archivo package.json para definir la configuración de mi proyecto y las dependencias y crea la carpeta **node_modules** donde almacena todas las librerías instaladas.
 
 ---
 
