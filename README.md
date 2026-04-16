@@ -18,6 +18,7 @@ Para su desarrollo se utilizan tecnologías ya vistas como HTML, CSS y JavaScrip
 
 - CSS → diseño
 
+
 - JavaScript → lógica:
 
     - Llamadas a la API
