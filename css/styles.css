@@ -148,4 +148,51 @@ body {
   border-top: 1px solid var(--color-borde);
   color: var(--color-texto-secundario);
   font-size: 0.85rem;
+    margin-top: auto;
+}
+
+#contenedor-juegos {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.tarjeta {
+  background: var(--color-panel);
+  border: 1px solid var(--color-borde);
+  border-radius: 12px;
+  padding: 15px;
+
+  transition: 0.2s;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primario);
+  box-shadow: 0 0 20px hsla(45, 80%, 55%, 0.15);
+}
+
+.tarjeta h2 {
+  font-size: 1.1rem;
+  color: var(--color-primario);
+  margin-bottom: 10px;
+}
+
+.tarjeta p {
+  font-size: 0.9rem;
+  margin: 4px 0;
+  color: var(--color-texto);
+}
+
+.tarjeta strong {
+  color: var(--color-texto-secundario);
+}
+
+@media (max-width: 600px) {
+  #contenedor-juegos {
+    grid-template-columns: 1fr;
+  }
 }

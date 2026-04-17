@@ -23,13 +23,27 @@
     </ul>
 </nav>
 
-
+<section id="contenedor-juegos"></section>
 
 <footer class="pie">
-            <p>Enciclopedia Hyliana © 2026 - Proyecto de Lenguaje de Marcas</p>
+    <p>Enciclopedia Hyliana © 2026 - Proyecto de Lenguaje de Marcas</p>
 </footer>
 
-<script type="module" src="./js/ui.js"></script>
+<script type="module">
+import { xmlToJSON } from "./js/transform.js";
+import { renderJuegos } from "./js/ui.js";
+
+async function cargarJuegos() {
+    const respuesta = await fetch("./data/juegos.xml");
+    const xmlString = await respuesta.text();
+
+    const juegosJSON = xmlToJSON(xmlString);
+
+    renderJuegos(juegosJSON);
+}
+
+cargarJuegos();
+</script>
 
 </body>
 </html>
