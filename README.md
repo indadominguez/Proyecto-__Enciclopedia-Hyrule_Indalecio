@@ -127,7 +127,15 @@ Es un lenguaje para definir y validar la estructura de **documentos JSON**.
 
 ### Validación  XML y XSD
 
-El archivo xml ha sido validado correctamente 
+El archivo xml ha sido validado correctamente utilizando el esquema **juegos.xsd**.
+
+Primero es necesario vincular el archivo XMl con el XSD en la parte de arriba del código.
+
+https://github.com/indadominguez/Proyecto-__Enciclopedia-Hyrule_Indalecio/blob/5abf5fda3d44ec5e9b52fa5ed56c4893340a14f1/data/juegos.xml#L2-L4
+
+Ya con el archivo vinculado he creado el xsd como piden las normas de la práctica, haciendo que el validador pase correctamente.
+
+![Validación XML](asserts/img/validacion-xml.png)
 ---
 
 ## Almacenamiento 
