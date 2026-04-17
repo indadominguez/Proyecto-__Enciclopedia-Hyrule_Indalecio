@@ -119,6 +119,15 @@ Es un lenguaje para definir y validar la estructura de **documentos JSON**.
 
 ## Esquemas 
 
+### Validación JSON
+
+
+---
+
+
+### Validación  XML y XSD
+
+El archivo xml ha sido validado correctamente 
 ---
 
 ## Almacenamiento 
