@@ -31,15 +31,38 @@ Para su desarrollo se utilizan tecnologías ya vistas como HTML, CSS y JavaScrip
 
 ### API externa
 
-Utilizo la API de **Zelda** para poder interpretar la información de los distintos tipos de entidades, en el proyecto he elegido estos cuatro:
+#### ¿Qué es una API REST?
 
-- Personajes
+Una API REST es un tipo de servicio web que permite a una aplicación comunicarse con otra a través de HTTP, funciona mediante peticiones a URLs llamadas endpoints, y devuelve normalmente datos en formato JSON.
 
-- Monstruos
+**Se basa en operaciones estándar:**
 
-- Jefes
+- GET → obtener datos
+- POST → crear datos
+- PUT/PATCH → actualizar datos
+- DELETE → eliminar datos
 
-- Mazmorras
+En el proyecto utilizo la API de **Zelda** para poder interpretar la información de los distintos tipos de entidades, en el proyecto he elegido estos cuatro:
+
+- Personajes (characters)
+
+- Monstruos (monsters)
+
+- Jefes (bosses)
+
+- Mazmorras (dungeons)
+
+Los endpoints que uso en el proyecto utilizo este patrón [fetch(`${BASE_URL}/${tipo}`)], esto lo que hace es coger directamente el tipo de endpoint que necesitemos.
+
+### Fetch
+
+Es una función nativa de JavaScript que permite hacer peticiones HTTP.
+https://github.com/indadominguez/Proyecto-__Enciclopedia-Hyrule_Indalecio/blob/6eca15db15ba462bbf6eade55ffdb706c473cd7a/js/api.js#L18-L19
+
+- Envía una petición GET a la API
+- Espera la respuesta
+- Convierte la respuesta a JSON
+- Devuelve los datos para usarlos en la app
 
 ---
 
