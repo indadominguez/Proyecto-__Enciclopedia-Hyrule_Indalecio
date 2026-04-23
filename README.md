@@ -116,6 +116,7 @@ Gracias a **npm**, utilizo el archivo package.json para definir la configuració
 ## La Zelda API 
 
 Para la zelda api voy a utilizar los Personajes, los Monstruos, los Jefes y las Mazmorras, estas tienen una gran importancia a la hora de pode explorar, resolver puzzles y acertijos y lo más importante derrotar al jefe.
+
 ---
 
 ## Formatos de datos 
