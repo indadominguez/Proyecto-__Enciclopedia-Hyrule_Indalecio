@@ -1,7 +1,9 @@
-import { xmlToJSON } from "./transform.js";
+import { buscarZelda } from "./api.js";
+
 
 export function renderJuegos(juegos) {
     const contenedor = document.getElementById("contenedor-juegos");
+    if (!contenedor) return;
 
     contenedor.innerHTML = "";
 
@@ -23,21 +25,63 @@ export function renderJuegos(juegos) {
     }
 }
 
-async function cargarJuegos() {
-    const contenedor = document.getElementById("contenedor-juegos");
 
-    if (!contenedor) return; // evita ejecutar en otras páginas
+function renderResultados(data) {
+    const contenedor = document.getElementById("results");
+    if (!contenedor) return;
 
-    try {
-        const respuesta = await fetch("../data/juegos.xml");
-        const xmlString = await respuesta.text();
+    contenedor.innerHTML = "";
 
-        const juegos = xmlToJSON(xmlString);
+    if (!data.data || data.data.length === 0) {
+        contenedor.innerHTML = "<p>No hay resultados</p>";
+        return;
+    }
 
-        renderJuegos(juegos);
-    } catch (error) {
-        contenedor.innerHTML = "<p>Error cargando juegos</p>";
+    for (let i = 0; i < data.data.length; i++) {
+        const item = data.data[i];
+
+        contenedor.innerHTML += `
+            <article class="tarjeta">
+                <h2>${item.name}</h2>
+                <p>${item.description || "Sin descripción"}</p>
+            </article>
+        `;
     }
 }
 
-document.addEventListener("DOMContentLoaded", cargarJuegos);
+
+function iniciarBuscador() {
+    const input = document.getElementById("entradaBusqueda");
+    const selector = document.getElementById("tipoBusqueda");
+
+    if (!input || !selector) return;
+
+    let timeout;
+
+    input.addEventListener("input", () => {
+        clearTimeout(timeout);
+
+        timeout = setTimeout(async () => {
+            const termino = input.value.trim();
+            const tipo = selector.value;
+            const contenedor = document.getElementById("results");
+
+            if (termino.length < 3) {
+                if (contenedor) contenedor.innerHTML = "";
+                return;
+            }
+
+            if (contenedor) contenedor.innerHTML = "Cargando...";
+
+            try {
+                const data = await buscarZelda(tipo, termino);
+                renderResultados(data);
+            } catch {
+                if (contenedor) contenedor.innerHTML = "Error de red";
+            }
+
+        }, 500);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", iniciarBuscador);
