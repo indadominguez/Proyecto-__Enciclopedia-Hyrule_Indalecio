@@ -1,3 +1,4 @@
+console.log("API CARGADA");
 const BASE_URL = "https://zelda.fanapis.com/api";
 
 export async function buscarZelda(tipo, termino) {
@@ -12,8 +13,10 @@ export async function buscarZelda(tipo, termino) {
         const respuesta = await fetch(`${BASE_URL}/${tipo}`);
         const data = await respuesta.json();
 
-        const items = (data.data || []).filter(item =>
-            item.name.toLowerCase().includes(termino.toLowerCase())
+        const lista = data.data || [];
+
+        const items = lista.filter(item =>
+            item.name?.toLowerCase().includes(termino.toLowerCase())
         );
 
         const resultado = { data: items };
@@ -23,6 +26,7 @@ export async function buscarZelda(tipo, termino) {
         return resultado;
 
     } catch (error) {
+        console.error(error);
         throw new Error("Error de red");
     }
 }

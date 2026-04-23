@@ -1,5 +1,5 @@
+console.log("UI CARGADO");
 import { buscarZelda } from "./api.js";
-
 
 export function renderJuegos(juegos) {
     const contenedor = document.getElementById("contenedor-juegos");
@@ -25,30 +25,30 @@ export function renderJuegos(juegos) {
     }
 }
 
-
 function renderResultados(data) {
     const contenedor = document.getElementById("results");
     if (!contenedor) return;
 
+    const items = data.data || [];
+
     contenedor.innerHTML = "";
 
-    if (!data.data || data.data.length === 0) {
+    if (items.length === 0) {
         contenedor.innerHTML = "<p>No hay resultados</p>";
         return;
     }
 
-    for (let i = 0; i < data.data.length; i++) {
-        const item = data.data[i];
+    for (let i = 0; i < items.length; i++) {
+        const item = items[i];
 
         contenedor.innerHTML += `
             <article class="tarjeta">
-                <h2>${item.name}</h2>
-                <p>${item.description || "Sin descripción"}</p>
+                <h2>${item.name ?? "Sin nombre"}</h2>
+                <p>${item.description ?? "Sin descripción"}</p>
             </article>
         `;
     }
 }
-
 
 function iniciarBuscador() {
     const input = document.getElementById("entradaBusqueda");
@@ -66,18 +66,20 @@ function iniciarBuscador() {
             const tipo = selector.value;
             const contenedor = document.getElementById("results");
 
+            if (!contenedor) return;
+
             if (termino.length < 3) {
-                if (contenedor) contenedor.innerHTML = "";
+                contenedor.innerHTML = "";
                 return;
             }
 
-            if (contenedor) contenedor.innerHTML = "Cargando...";
+            contenedor.innerHTML = "<p>Cargando...</p>";
 
             try {
                 const data = await buscarZelda(tipo, termino);
                 renderResultados(data);
-            } catch {
-                if (contenedor) contenedor.innerHTML = "Error de red";
+            } catch (error) {
+                contenedor.innerHTML = "<p>Error de red</p>";
             }
 
         }, 500);
