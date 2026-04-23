@@ -54,7 +54,7 @@ En el proyecto utilizo la API de **Zelda** para poder interpretar la informació
 
 Los endpoints que uso en el proyecto utilizo este patrón [fetch(`${BASE_URL}/${tipo}`)], esto lo que hace es coger directamente el tipo de endpoint que necesitemos.
 
-### Fetch
+#### Fetch , Axios y Códigos HTTP
 
 Es una función nativa de JavaScript que permite hacer peticiones HTTP.
 https://github.com/indadominguez/Proyecto-__Enciclopedia-Hyrule_Indalecio/blob/6eca15db15ba462bbf6eade55ffdb706c473cd7a/js/api.js#L18-L19
@@ -63,6 +63,23 @@ https://github.com/indadominguez/Proyecto-__Enciclopedia-Hyrule_Indalecio/blob/6
 - Espera la respuesta
 - Convierte la respuesta a JSON
 - Devuelve los datos para usarlos en la app
+
+A parte de fetch también existe **Axios**, es una librería externa que hace lo mismo que fetch, pero con algunas ventajas:
+
+- Código más limpio
+- Manejo automático de JSON
+- Mejor gestión de errores
+- Interceptores de peticiones
+
+En el trabajo utilizo fetch porque es nativo y no hace falta la instalación de nada.
+
+---
+
+#### Códigos de estado HTTP
+
+Los códigos HTTP indican el resultado de una petición, él más común es el 404 NOT FOUND e índica que el recurso buscado no existe, en mi código controlo los errores con un catch.
+https://github.com/indadominguez/Proyecto-__Enciclopedia-Hyrule_Indalecio/blob/6eca15db15ba462bbf6eade55ffdb706c473cd7a/js/ui.js#L126-L128
+
 
 ---
 
