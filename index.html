@@ -27,9 +27,18 @@
 
         <section class="buscador">
             <form class="formulario-busqueda" id="searchForm">
-            <label for="entradaBusqueda" class="oculto">Buscar</label>
-            <input type="text" class="entrada-busqueda" id="entradaBusqueda" placeholder="Buscar...">
-            <button type="submit" class="boton-busqueda" id="botonBusqueda">🔍</button>
+                <label for="entradaBusqueda" class="oculto">Buscar</label>
+                <input  type="text" 
+                    class="entrada-busqueda" 
+                    id="entradaBusqueda" 
+                    placeholder="Buscar...">
+                    
+                <select id="tipoBusqueda" class="tipo">
+                    <option value="characters">Personajes</option>
+                    <option value="monsters">Monstruos</option>
+                    <option value="bosses">Jefes</option>
+                    <option value="dungeons">Mazmorras</option>
+                </select>
             </form>
         </section>
 

@@ -121,14 +121,6 @@ body {
   color: var(--color-texto-secundario);
 }
 
-.boton-busqueda {
-  width: 56px;
-  height: 48px;
-  border: none;
-  border-radius: 8px;
-  background: var(--color-primario);
-  cursor: pointer;
-}
 
 /* OCULTO */
 .oculto {
