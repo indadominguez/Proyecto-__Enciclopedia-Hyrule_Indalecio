@@ -1,3 +1,5 @@
+import { xmlToJSON } from "./transform.js";
+
 export function renderJuegos(juegos) {
     const contenedor = document.getElementById("contenedor-juegos");
 
@@ -20,3 +22,22 @@ export function renderJuegos(juegos) {
         `;
     }
 }
+
+async function cargarJuegos() {
+    const contenedor = document.getElementById("contenedor-juegos");
+
+    if (!contenedor) return; // evita ejecutar en otras páginas
+
+    try {
+        const respuesta = await fetch("../data/juegos.xml");
+        const xmlString = await respuesta.text();
+
+        const juegos = xmlToJSON(xmlString);
+
+        renderJuegos(juegos);
+    } catch (error) {
+        contenedor.innerHTML = "<p>Error cargando juegos</p>";
+    }
+}
+
+document.addEventListener("DOMContentLoaded", cargarJuegos);

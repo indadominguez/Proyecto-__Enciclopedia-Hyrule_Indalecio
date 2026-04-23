@@ -16,10 +16,10 @@
 
 <nav class="tipos">
     <ul>
-        <li><a class="tipo activo" href="index.html">Buscador</a></li>
+        <li><a class="tipo" href="index.html">Buscador</a></li>
         <li><a class="tipo" href="favoritos.html">Favoritos</a></li>
         <li><a class="tipo" href="tipo.html">Tipo</a></li>
-        <li><a class="tipo" href="juegos.html">Juegos</a></li>
+        <li><a class="tipo activo" href="juegos.html">Juegos</a></li>
     </ul>
 </nav>
 
@@ -29,21 +29,7 @@
     <p>Enciclopedia Hyliana © 2026 - Proyecto de Lenguaje de Marcas</p>
 </footer>
 
-<script type="module">
-import { xmlToJSON } from "./js/transform.js";
-import { renderJuegos } from "./js/ui.js";
-
-async function cargarJuegos() {
-    const respuesta = await fetch("./data/juegos.xml");
-    const xmlString = await respuesta.text();
-
-    const juegosJSON = xmlToJSON(xmlString);
-
-    renderJuegos(juegosJSON);
-}
-
-cargarJuegos();
-</script>
+<script type="module" src="./js/ui.js"></script>
 
 </body>
 </html>
