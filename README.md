@@ -31,11 +31,15 @@ Para su desarrollo se utilizan tecnologías ya vistas como HTML, CSS y JavaScrip
 
 ### API externa
 
-Utilizo la API de **Zelda** para poder interpretar la información de los distintos tipos de entidades, en el proyecto he elegido estos dos:
+Utilizo la API de **Zelda** para poder interpretar la información de los distintos tipos de entidades, en el proyecto he elegido estos cuatro:
 
 - Personajes
 
 - Monstruos
+
+- Jefes
+
+- Mazmorras
 
 ---
 

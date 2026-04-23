@@ -1,0 +1,27 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Zelda Entity",
+    "type": "object",
+    "description": "Esquema de validación para entidades de la Zelda API",
+
+    "properties": {
+        "id": {
+        "type": "string",
+        "description": "Identificador único de la entidad"
+        },
+
+        "name": {
+            "type": "string",
+            "description": "Nombre de la entidad"
+        },
+
+        "description": {
+            "type": "string",
+            "description": "Descripción de la entidad"
+        }
+    },
+
+    "required": ["id", "name", "description"],
+
+    "additionalProperties": false
+}
