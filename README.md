@@ -306,6 +306,30 @@ Desventajas:
 
 ## Decisiones técnicas  
 
+### Cambio Validación de JSON
+
+Durante la validación del JSON Schema surgieron algunos problemas iniciales, ya que la herramienta online que estaba utilizando no era compatible con la versión draft 2020-12 del estándar de JSON Schema. Esto provocaba errores que impedían validar correctamente el archivo, a pesar de que su estructura era correcta.
+
+Tras investigar en la documentación oficial y en la página de validación de JSON Schema, identifiqué que el problema estaba relacionado con la versión del esquema utilizada. Como solución, adapté la declaración del esquema a una versión más compatible (draft-07), modificando la siguiente línea:
+
+```json
+"$schema": "http://json-schema.org/draft-07/schema#"
+```
+
+De esta forma, la herramienta de validación pudo procesar correctamente el archivo y pude verificar su funcionamiento sin errores.
+
+### Uso de LocalStorage
+
+Según el enunciado, cada búsqueda debe guardarse en localStorage como una especie de caché, usando una clave formada por el tipo y el término buscado. La idea es que si el usuario repite la misma búsqueda, los datos se obtengan directamente desde localStorage sin volver a hacer la petición a la API.
+
+En mi caso, he utilizado localStorage, pero no exactamente como una caché pura, sino más como un historial de búsquedas.
+
+Es decir, cuando el usuario busca algo, guardo la información de esa búsqueda (nombre, descripción, raza, género, tipo y fecha) para poder mostrarla después en la página de historial.
+
+Además, en la parte de la API sí se evita repetir llamadas si ya existe información guardada, pero el enfoque principal que he hecho en la interfaz es más de registro de búsquedas que de caché estricta.
+
+Por eso, aunque no es exactamente igual a lo que pide el enunciado al 100%, sí se cumple el uso de localStorage y la idea de reutilizar datos guardados, pero adaptado a un sistema de historial más visual y completo.
+
 ---
 
 ## Instrucciones de uso 
