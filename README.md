@@ -398,6 +398,28 @@ Esta separación también sigue una estructura más limpia de desarrollo, ya que
 
 ---
 
-## Instrucciones de uso 
+## Instrucciones de uso Firebase 
+
+### Firebase
+
+La conexión entre el proyecto y la base de datos de Firebase se realiza mediante el SDK de Firebase para Web.
+
+Cuando el proyecto se ejecuta, se inicializa Firebase usando una configuración única (apiKey, projectId, etc.), y a partir de ahí se habilita el acceso a Firestore Database.
+
+https://github.com/indadominguez/Proyecto-__Enciclopedia-Hyrule_Indalecio/blob/e6d939ee227bdc81e9787d6cf8409b262e3f9bbd/js/firebase.js#L1-L24
+
+La base de datos se conecta al proyecto mediante el archivo firebase.js, donde se inicializa Firebase con la configuración del proyecto y se activa Firestore.
+A partir de ahí, el objeto db permite leer y escribir datos en la base de datos en la nube.
+
+Ejemplo: 
+```js
+import { db } from "./firebase.js";
+import { collection, addDoc } from "firebase/firestore";
+
+await addDoc(collection(db, "favoritos"), {
+    name: "Zelda",
+    description: "Personaje favorito"
+});
+```
 
 
