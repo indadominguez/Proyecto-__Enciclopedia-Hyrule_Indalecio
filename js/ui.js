@@ -1,6 +1,7 @@
 console.log("UI CARGADO");
 import { buscarZelda } from "./api.js";
 
+
 let ultimosResultados = []; 
 
 export function renderJuegos(juegos) {
@@ -220,6 +221,7 @@ function activarBotonesEliminar() {
 function generarIdSeguro(item) {
     return item.id ?? `${item.name}-${item.description?.slice(0,20)}`;
 }
+
 
 
 // ==========================

@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enciclopedia Hyliana - Buscador de Zelda</title>
+    <title>Enciclopedia Hyliana - Favoritos</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
 
+<header class="cabecera">
+    <h1 class="titulo">Enciclopedia Hyliana</h1>
+    <p class="subtitulo">Explora Legend of Zelda</p>
+</header>
 
-    <header class="cabecera">
-        <h1 class="titulo">Enciclopedia Hyliana</h1>
-        <p class="subtitulo">Explora Legend of Zelda</p>
-    </header>
-
-    <nav class="tipos">
-        <ul>
-            <li><a class="tipo" href="index.html">Buscador</a></li>
-            <li><a class="tipo activo" href="favoritos.html">Favoritos</a></li>
-            <li><a class="tipo" href="tipo.html">Historial</a></li>
-            <li><a class="tipo" href="juegos.html">Juegos</a></li>
-        </ul>
-    </nav>
+<nav class="tipos">
+    <ul>
+        <li><a class="tipo" href="index.html">Buscador</a></li>
+        <li><a class="tipo activo" href="favoritos.html">Favoritos</a></li>
+        <li><a class="tipo" href="tipo.html">Historial</a></li>
+        <li><a class="tipo" href="juegos.html">Juegos</a></li>
+    </ul>
+</nav>
 
 <main class="contenedor-principal">
 
@@ -32,29 +31,15 @@
             <h2 class="titulo-panel">Mis favoritos</h2>
 
             <menu class="acciones-favoritos">
-                <li>
-                    <button id="orden-az" class="boton">Ordenar A-Z</button>
-                </li>
-                <li>
-                    <button id="orden-za" class="boton">Ordenar Z-A</button>
-                </li>
-                <li>
-                    <button id="orden-reciente" class="boton">Más recientes</button>
-                </li>
-                <li>
-                    <button id="vaciar-favoritos" class="boton boton-peligro">Vaciar</button>
-                </li>
+                <li><button id="orden-az" class="boton">Ordenar A-Z</button></li>
+                <li><button id="orden-za" class="boton">Ordenar Z-A</button></li>
+                <li><button id="orden-reciente" class="boton">Más recientes</button></li>
+                <li><button id="vaciar-favoritos" class="boton boton-peligro">Vaciar</button></li>
             </menu>
         </header>
 
-        <section
-            id="listaFavoritos"
-            class="lista-favoritos"
-            aria-label="Lista de favoritos"
-        >
-            <p class="mensaje-vacio">
-                No tienes favoritos todavía
-            </p>
+        <section id="listaFavoritos" class="lista-favoritos">
+            <p class="mensaje-vacio">No tienes favoritos todavía</p>
         </section>
 
     </section>
@@ -62,9 +47,10 @@
 </main>
 
 <footer class="pie">
-            <p>Enciclopedia Hyliana © 2026 - Proyecto de Lenguaje de Marcas</p>
+    <p>Enciclopedia Hyliana © 2026 - Proyecto de Lenguaje de Marcas</p>
 </footer>
 
+<script type="module" src="./js/favoritos.js"></script>
 
 </body>
 </html>
