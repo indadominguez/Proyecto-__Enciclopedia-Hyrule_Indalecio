@@ -8,7 +8,7 @@ Su objetivo principal es ofrecer una experiencia centralizada donde los fans pue
 
 ## Tecnologías y herramientas 
 
-Para su desarrollo se utilizan tecnologías ya vistas como HTML, CSS y JavaScript, junto con herramientas como **localStorage** para el almacenamiento local, **Firebase Firestore** para la persistencia de datos y diferentes formatos de intercambio de información como JSON, XML y **CSV**.
+Para su desarrollo se utilizan tecnologías ya vistas como HTML, CSS y JavaScript, junto con herramientas como **localStorage** para el almacenamiento local, **Firebase Firestore** para la persistencia de datos y diferentes formatos de intercambio de información como JSON y XML.
 
 ### HTML, CSS  y JavaScript
 
@@ -26,60 +26,6 @@ Para su desarrollo se utilizan tecnologías ya vistas como HTML, CSS y JavaScrip
     - Manipulación del DOM
     - LocalStorage
     - Firebase
-
----
-
-### API externa
-
-#### ¿Qué es una API REST?
-
-Una API REST es un tipo de servicio web que permite a una aplicación comunicarse con otra a través de HTTP, funciona mediante peticiones a URLs llamadas endpoints, y devuelve normalmente datos en formato JSON.
-
-**Se basa en operaciones estándar:**
-
-- GET → obtener datos
-- POST → crear datos
-- PUT/PATCH → actualizar datos
-- DELETE → eliminar datos
-
-En el proyecto utilizo la API de **Zelda** para poder interpretar la información de los distintos tipos de entidades, en el proyecto he elegido estos cuatro:
-
-- Personajes (characters)
-
-- Monstruos (monsters)
-
-- Jefes (bosses)
-
-- Mazmorras (dungeons)
-
-Los endpoints que uso en el proyecto utilizo este patrón [fetch(`${BASE_URL}/${tipo}`)], esto lo que hace es coger directamente el tipo de endpoint que necesitemos.
-
-#### Fetch , Axios y Códigos HTTP
-
-Es una función nativa de JavaScript que permite hacer peticiones HTTP.
-https://github.com/indadominguez/Proyecto-__Enciclopedia-Hyrule_Indalecio/blob/6eca15db15ba462bbf6eade55ffdb706c473cd7a/js/api.js#L18-L19
-
-- Envía una petición GET a la API
-- Espera la respuesta
-- Convierte la respuesta a JSON
-- Devuelve los datos para usarlos en la app
-
-A parte de fetch también existe **Axios**, es una librería externa que hace lo mismo que fetch, pero con algunas ventajas:
-
-- Código más limpio
-- Manejo automático de JSON
-- Mejor gestión de errores
-- Interceptores de peticiones
-
-En el trabajo utilizo fetch porque es nativo y no hace falta la instalación de nada.
-
----
-
-#### Códigos de estado HTTP
-
-Los códigos HTTP indican el resultado de una petición, él más común es el 404 NOT FOUND e índica que el recurso buscado no existe, en mi código controlo los errores con un catch.
-https://github.com/indadominguez/Proyecto-__Enciclopedia-Hyrule_Indalecio/blob/6eca15db15ba462bbf6eade55ffdb706c473cd7a/js/ui.js#L126-L128
-
 
 ---
 
@@ -103,6 +49,61 @@ Se encarga de:
 
 ---
 
+## La Zelda API 
+
+### ¿Qué es una API REST?
+
+Una API REST es un tipo de servicio web que permite a una aplicación comunicarse con otra a través de HTTP, funciona mediante peticiones a URLs llamadas endpoints, y devuelve normalmente datos en formato JSON.
+
+**Se basa en operaciones estándar:**
+
+- GET → obtener datos
+- POST → crear datos
+- PUT/PATCH → actualizar datos
+- DELETE → eliminar datos
+
+En el proyecto utilizo la API de **Zelda** para poder interpretar la información de los distintos tipos de entidades, en el proyecto he elegido estos cuatro:
+
+- Personajes (characters)
+
+- Monstruos (monsters)
+
+- Jefes (bosses)
+
+- Mazmorras (dungeons)
+
+Los endpoints que uso en el proyecto utilizo este patrón [fetch(`${BASE_URL}/${tipo}`)], esto lo que hace es coger directamente el tipo de endpoint que necesitemos.
+
+---
+
+### Fetch , Axios y Códigos HTTP
+
+Es una función nativa de JavaScript que permite hacer peticiones HTTP.
+https://github.com/indadominguez/Proyecto-__Enciclopedia-Hyrule_Indalecio/blob/6eca15db15ba462bbf6eade55ffdb706c473cd7a/js/api.js#L18-L19
+
+- Envía una petición GET a la API
+- Espera la respuesta
+- Convierte la respuesta a JSON
+- Devuelve los datos para usarlos en la app
+
+A parte de fetch también existe **Axios**, es una librería externa que hace lo mismo que fetch, pero con algunas ventajas:
+
+- Código más limpio
+- Manejo automático de JSON
+- Mejor gestión de errores
+- Interceptores de peticiones
+
+En el trabajo utilizo fetch porque es nativo y no hace falta la instalación de nada.
+
+---
+
+### Códigos de estado HTTP
+
+Los códigos HTTP indican el resultado de una petición, él más común es el 404 NOT FOUND e índica que el recurso buscado no existe, en mi código controlo los errores con un catch.
+https://github.com/indadominguez/Proyecto-__Enciclopedia-Hyrule_Indalecio/blob/6eca15db15ba462bbf6eade55ffdb706c473cd7a/js/ui.js#L126-L128
+
+---
+
 ### NPM (Node Package Manager)
 
 Es un gestor de paquetes de JavaScript. 
@@ -113,13 +114,8 @@ Gracias a **npm**, utilizo el archivo package.json para definir la configuració
 
 ---
 
-## La Zelda API 
-
-Para la zelda api voy a utilizar los Personajes, los Monstruos, los Jefes y las Mazmorras, estas tienen una gran importancia a la hora de pode explorar, resolver puzzles y acertijos y lo más importante derrotar al jefe.
-
----
-
 ## Formatos de datos 
+
 En el desarrollo de aplicaciones y el intercambio de información entre sistemas, es fundamental utilizar formatos que permitan estructurar, transportar y validar datos de manera eficiente. Entre los más utilizados se encuentran XML y JSON, junto con sus respectivos mecanismos de validación: XSD y JSON Schema.
 
 A continuación, se explicará qué es cada uno de estos conceptos, cuáles son sus diferencias principales y en qué situaciones es más adecuado utilizar cada uno.
@@ -165,8 +161,13 @@ Es un lenguaje para definir y validar la estructura de **documentos JSON**.
 
 ## Esquemas 
 
+En este apartado se explica la VALIDACIÓN de XML, XSD y JSON de una entidad de la API.
+
 ### Validación JSON
 
+El archivo JSON valida cualquier entidad de la api que cumpla **"type": "object"**, esto quiere decir que solo acepta datos de tipo objeto y el objeto debe tener id, name y description. Todos deben ser String y no acepta que tenga más campos gracias a **"additionalProperties": false**.
+
+![Validación JSON](image.png)
 
 ---
 
