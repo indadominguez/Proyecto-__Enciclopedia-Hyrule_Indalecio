@@ -49,6 +49,55 @@ Se encarga de:
 
 ---
 
+### DOMParser (XML → JSON en navegador)
+
+DOMParser es una herramienta nativa del navegador que permite convertir texto XML en un documento que se puede recorrer con JavaScript y se utiliza en proyectos web simples o **frontend** donde no se quiera añadir dependencias.
+
+Ventajas:
+
+- No requiere instalación de librerías externas.
+- Funciona directamente en el navegador.
+- Permite acceder a nodos XML de forma sencilla.
+
+Limitaciones:
+
+- Es más manual, hay que recorrer el árbol XML a mano.
+- No es tan potente para transformaciones complejas.
+- Solo funciona en entorno frontend.
+
+### xml2js (Node.js)
+
+xml2js es una librería de **Node.js** que convierte XML a JSON de forma automática y se usa en aplicaciones **backend** en Node.js donde se procesen archivos XML.
+
+Ventajas:
+
+- Conversión automática y rápida.
+- Muy flexible y configurable.
+- Ideal para backend.
+
+Limitaciones:
+
+- Requiere instalación (npm).
+- No se usa directamente en navegador.
+
+### PapaParse (JSON ↔ CSV)
+
+PapaParse es una librería especializada en trabajar con CSV y es necesario cuando se necesita exportar/importar datos en CSV de forma profesional o con grandes volúmenes de información.
+
+Ventajas:
+
+- Muy robusta y estable.
+- Maneja bien archivos grandes.
+- Soporta conversión JSON ⇄ CSV fácilmente.
+- Detecta errores y estructuras complejas.
+
+Limitaciones:
+
+- Requiere dependencia externa.
+- Puede ser innecesaria en proyectos pequeños.
+
+---
+
 ## La Zelda API 
 
 ### ¿Qué es una API REST?
@@ -157,6 +206,15 @@ Es un lenguaje para definir y validar la estructura de **documentos JSON**.
 - Establecer campos obligatorios
 - Restringir valores
 
+### DOM PARSER
+
+He utilizado DOMParser para convertir los datos en formato XML a una estructura que pueda trabajarse en JavaScript.
+
+La razón principal es que DOMParser es una herramienta nativa del navegador, por lo que no es necesario instalar librerías externas. Permite leer el XML como un documento y recorrer sus nodos fácilmente para extraer la información que después se transforma a objetos tipo JSON.
+
+Esto hace que el proceso sea más ligero y directo dentro del entorno del navegador, que es donde se ejecuta la aplicación.
+
+Como alternativa, en entornos de Node.js se podría utilizar una librería como xml2js, que está más orientada a backend y permite convertir XML a JSON de forma más automática y con más opciones de configuración.
 ---
 
 ## Esquemas 
@@ -329,6 +387,14 @@ Es decir, cuando el usuario busca algo, guardo la información de esa búsqueda 
 Además, en la parte de la API sí se evita repetir llamadas si ya existe información guardada, pero el enfoque principal que he hecho en la interfaz es más de registro de búsquedas que de caché estricta.
 
 Por eso, aunque no es exactamente igual a lo que pide el enunciado al 100%, sí se cumple el uso de localStorage y la idea de reutilizar datos guardados, pero adaptado a un sistema de historial más visual y completo.
+
+### Creación juegos.js
+
+He creado el archivo juegos.js para separar la lógica relacionada con la visualización de los juegos dentro del proyecto. De esta forma, el código queda mejor organizado y es más fácil de mantener.
+
+En este archivo se encarga únicamente de renderizar los juegos en la página, mostrando sus datos como el título, ID, desarrolladora, plataforma, año y puntuación. Así evito mezclar esta funcionalidad con otras partes como el buscador o el historial.
+
+Esta separación también sigue una estructura más limpia de desarrollo, ya que cada archivo tiene una responsabilidad concreta, lo que facilita futuras modificaciones o ampliaciones del proyecto sin romper otras partes del código.
 
 ---
 

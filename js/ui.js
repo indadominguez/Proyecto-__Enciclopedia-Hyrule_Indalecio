@@ -1,7 +1,7 @@
 console.log("UI CARGADO");
 import { buscarZelda } from "./api.js";
 
-let ultimosResultados = []; // 👈 FALTABA ESTO
+let ultimosResultados = []; 
 
 export function renderJuegos(juegos) {
     const contenedor = document.getElementById("contenedor-juegos");
